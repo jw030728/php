@@ -1,0 +1,150 @@
+/************************************************************
+ * service.css
+ * - 4개 파트 (가로 배치)
+ * - 좌측 3개 파트 색상 블록
+ * - 오른쪽 마지막 파트: 4개 버튼
+ * - 클래스명: sc-* (충돌 방지)
+ ************************************************************/
+
+/* 전체 컨테이너 (4개 파트 가로 배치) */
+.sc-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4열 */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    /* 가운데 정렬 + 상하 여백 */
+    padding: 0 20px;
+    /* 좌우 패딩 */
+    font-family: "Arial", sans-serif;
+}
+
+/* 공통 박스 스타일 */
+.sc-box {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* 1) 고객센터 파트 */
+.sc-customer-center {
+    background-color: #f8f9fc;
+}
+
+.sc-customer-center h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.sc-phone {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.sc-time {
+    font-size: 14px;
+    color: #666;
+}
+
+/* 2) 계좌정보 파트 */
+.sc-account-info {
+    background-color: #f8f9fc;
+}
+
+.sc-account-info h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.sc-account-number {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.sc-account-owner {
+    font-size: 14px;
+    color: #666;
+}
+
+/* 3) 공지사항 파트 */
+.sc-notice {
+    background-color: #f8f9fc;
+}
+
+.sc-notice h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.sc-notice-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sc-notice-list li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+.sc-date {
+    float: right;
+    font-size: 12px;
+    color: #999;
+}
+
+/* 네 번째 파트 (오른쪽 버튼) - 수정/추가 */
+.sc-button-column {
+    display: flex;
+    flex-direction: column;
+    /* 세로로 쌓음 */
+    justify-content: flex-start;
+}
+
+/* 버튼 공통 스타일 */
+.sc-btn {
+    background-color: #fff;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 10px;
+    /* 버튼 간 간격 */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sc-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* 마지막 줄 2개 버튼 가로 배치 */
+.sc-row-two {
+    display: flex;
+    gap: 10px;
+}
+
+/* 각 버튼을 반씩 차지하도록 */
+.sc-half {
+    flex: 1;
+}
+
+/* 반응형 (화면 좁아지면 2열/1열) */
+@media (max-width: 768px) {
+    .sc-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .sc-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

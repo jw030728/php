@@ -1,0 +1,182 @@
+/* header.css */
+
+/* 상단 배너 기본 스타일 */
+.top-banner {
+  background-color: #d7eafc;
+  /* 연한 하늘색 */
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  position: relative;
+  text-align: center;
+  /* 전체 텍스트 가운데 정렬 */
+}
+
+/* 배너 컨테이너: 내부 요소를 세로로 나열하고 가운데 정렬 */
+.banner-container {
+  display: block;
+  text-align: center;
+  /* 모든 행의 텍스트와 버튼을 가운데 정렬 */
+}
+
+/* 각 행 (층) */
+.banner-row {
+  margin: 5px 0;
+}
+
+/* 첫째 줄: 배너 텍스트 */
+.banner-row-text {
+  font-weight: bold;
+  color: #333;
+  font-size: 14px;
+}
+
+/* 둘째 줄: 배너 버튼 */
+.banner-row-btn {
+  /* text-align: center; 이미 상위에 적용되어 있음 */
+}
+
+.banner-btn {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #668cff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.banner-btn:hover {
+  background-color: #4d7aff;
+}
+
+/* "오늘 하루 보지 않기" 버튼 (오른쪽 상단) */
+.hide-banner {
+  font-size: 14px;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.hide-banner:hover {
+  text-decoration: underline;
+}
+
+/* Sticky Header 전체 스타일 */
+.sticky-header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+/* 첫 번째 줄 (회사 정보 & 버튼) */
+.top-row {
+  font-size: 12px;
+  color: #555;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.top-buttons .btn-link {
+  font-size: 12px;
+  text-decoration: none;
+  color: #007bff;
+  margin-left: 10px;
+}
+
+.top-buttons .btn-link:hover {
+  text-decoration: underline;
+}
+
+/* 두 번째 줄 (로고, 검색창, 광고) */
+.middle-row {
+  padding: 5px 0;
+  /* 추가: 검색창 절대 배치용 */
+  position: relative;
+  /* 자식인 .search-wrapper를 절대 배치(anchor) */
+}
+
+/* 중앙 검색창 절대 배치 무조건 중앙에오게 */
+.search-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo img {
+  height: 60px;
+}
+
+/* 검색창 스타일 */
+.search-form {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  padding: 5px 15px;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  padding: 8px;
+  background: transparent;
+  color: #333;
+}
+
+.search-input::placeholder {
+  color: #bbb;
+}
+
+.search-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #666;
+}
+
+.search-button:hover {
+  color: #000;
+}
+
+.ad-banner img {
+  height: 50px;
+}
+
+/* 세 번째 줄 (네비게이션 & 대출 문의하기 버튼) */
+.bottom-row {
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.nav-link {
+  font-size: 14px;
+  margin-right: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.loan-btn {
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 25px;
+}

@@ -1,0 +1,78 @@
+/* Final style.css with custom namespace to avoid conflicts */
+.custom-theme body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-theme .top-banner {
+  background-color: #f3f7fa;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+.custom-theme .top-banner button {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+/* 네비게이션 바 스타일 */
+.custom-theme header {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.custom-theme header .nav-link {
+  color: #555;
+  margin-right: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.custom-theme header .nav-link:hover {
+  color: #007bff;
+}
+
+/* 검색창 스타일 */
+.custom-theme .search-form .form-control {
+  width: 250px;
+  border-radius: 5px;
+}
+
+.custom-theme .search-form .btn {
+  padding: 5px 12px;
+  font-size: 14px;
+}
+
+/* 버튼 스타일 */
+.custom-theme header .btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.custom-theme header .btn-outline-primary {
+  border-color: #007bff;
+  color: #007bff;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.custom-theme header .btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Sticky Header */
+.custom-theme .sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+/* 로고 이미지 스타일 */
+.custom-theme .logo img {
+  height: 40px;
+}

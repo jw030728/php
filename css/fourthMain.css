@@ -1,0 +1,165 @@
+/************************************************************
+ * fourthMain.css
+ * - 왼쪽: 큰 컨텐츠 (2줄 높이 느낌)
+ * - 오른쪽: 여러 카드 (흰색 → 검은색 hover)
+ * - 클래스명: fm4-* (충돌 방지)
+ ************************************************************/
+
+/* 전체 컨테이너 */
+.fm4-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    /* 가운데 정렬 + 상하 여백 */
+    padding: 0 20px;
+    /* 좌우 패딩 */
+    font-family: "Arial", sans-serif;
+}
+
+/* 섹션 제목 */
+.fm4-container h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* 레이아웃 (왼쪽 큰 컨텐츠 + 오른쪽 카드들) */
+.fm4-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* 왼쪽: 1fr, 오른쪽: 2fr */
+    gap: 20px;
+}
+
+/* 왼쪽 큰 컨텐츠 */
+.fm4-big-left {
+    position: relative;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* HOT 뱃지 (왼쪽 상단 or 오른쪽 상단) */
+.fm4-hot-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #007bff;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+/* 왼쪽 큰 이미지 */
+.fm4-big-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* 왼쪽 큰 타이틀 */
+.fm4-big-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 왼쪽 큰 설명 */
+.fm4-big-desc {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+/* 왼쪽 전화번호 */
+.fm4-big-phone {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 오른쪽 카드 그리드 */
+.fm4-right-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4열 */
+    gap: 20px;
+}
+
+/* 개별 카드 (기본: 흰색) */
+.fm4-card {
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 카드 제목 */
+.fm4-card h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* 카드 설명 */
+.fm4-card p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+/* 카드 전화번호 */
+.fm4-card-phone {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 대출 문의하기 버튼 (카드 내부) */
+.fm4-inquiry-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 카드 hover 시 → 검은색 배경, 흰색 글자 */
+.fm4-card:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* 카드 hover 시 버튼 반전 → 흰색 배경, 검은색 글자 */
+.fm4-card:hover .fm4-inquiry-btn {
+    background-color: #fff;
+    color: #333;
+}
+
+/* 반응형 (화면 좁아지면 열 수 줄이기) */
+@media (max-width: 768px) {
+    .fm4-layout {
+        grid-template-columns: 1fr;
+        /* 한 줄 */
+    }
+
+    .fm4-right-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .fm4-right-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

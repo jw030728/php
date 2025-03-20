@@ -1,0 +1,126 @@
+/************************************************************
+ * fifthMain.css (클래스명 변경하여 충돌 방지)
+ * - 3행 x 5열 (총 15개 카드) 그리드
+ * - 기본 흰색 → hover 시 검은색 배경
+ ************************************************************/
+
+/* 전체 컨테이너 */
+.fm-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    /* 가운데 정렬 + 상하 여백 */
+    padding: 0 20px;
+    /* 좌우 패딩 */
+    font-family: "Arial", sans-serif;
+}
+
+/* 섹션 제목 */
+.fm-container h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* 카드 배치: 5열 x 자동 행 */
+.fm-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 5열 */
+    gap: 20px;
+    /* 카드 간 간격 */
+}
+
+/* 개별 카드 (기본: 흰색) */
+.fm-card {
+    background-color: #fff;
+    /* 기본 흰색 배경 */
+    color: #333;
+    /* 기본 글자색 */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* 버튼이 아래쪽 */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 카드 제목 */
+.fm-card h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* 카드 설명 */
+.fm-card p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+/* 전화번호 */
+.fm-phone {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 대출 문의하기 버튼 (카드 내부) */
+.fm-inquiry-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 카드 hover 시 → 검은색 배경, 흰색 글자 */
+.fm-card:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* 카드 hover 시 버튼 반전 → 흰색 배경, 검은색 글자 */
+.fm-card:hover .fm-inquiry-btn {
+    background-color: #fff;
+    color: #333;
+}
+
+/* 더보기 버튼 */
+.fm-more-wrap {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.fm-more-btn {
+    background-color: #fff;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.fm-more-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* 반응형 (화면 좁아지면 열 수 줄이기) */
+@media (max-width: 768px) {
+    .fm-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .fm-cards-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
