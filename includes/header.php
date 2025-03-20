@@ -56,14 +56,16 @@
         <div class="bottom-row d-flex justify-content-between align-items-center">
             <!-- 네비게이션 -->
             <nav class="nav">
-                <a href="#" class="nav-link">전체 메뉴</a>
-                <a href="#" class="nav-link">지역별</a>
-                <a href="#" class="nav-link">상품별</a>
-                <a href="#" class="nav-link">실시간 대출문의</a>
-                <a href="#" class="nav-link">커뮤니티</a>
-                <a href="#" class="nav-link">고객지원</a>
-                <a href="#" class="nav-link">회사소개</a>
+                <a href="mainpages/home.php" class="nav-link">전체 메뉴</a>
+                <a href="mainpages/region.php" class="nav-link">지역별</a>
+                <a href="mainpages/product.php" class="nav-link">상품별</a>
+                <a href="mainpages/loan_inquiry.php" class="nav-link">실시간 대출문의</a>
+                <a href="mainpages/community.php" class="nav-link">커뮤니티</a>
+                <a href="mainpages/support.php" class="nav-link">고객지원</a>
+                <a href="mainpages/company.php" class="nav-link">회사소개</a>
+
             </nav>
+
 
             <!-- 대출 문의하기 버튼 -->
             <button class="btn btn-primary loan-btn">대출 문의하기</button>
@@ -101,6 +103,22 @@
         // 로그인 팝업 닫기
         loginCloseBtn.addEventListener("click", function() {
             loginOverlay.style.display = "none";
+        });
+    });
+
+    //화면전환
+    document.querySelectorAll('.nav-link').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // 기본 링크 동작 방지
+            let targetUrl = link.getAttribute('href'); // 예: mainpages/index.php
+
+            // 새로운 페이지의 내용을 불러오기 (AJAX)
+            fetch(targetUrl)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('main-content').innerHTML = html;
+                })
+                .catch(error => console.error('Error:', error));
         });
     });
 </script>
